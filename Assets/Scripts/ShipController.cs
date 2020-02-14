@@ -7,8 +7,12 @@ public class ShipController : MonoBehaviour
     // Variables
     public float speed;
     public float minX, minY, maxX, maxY;
+    public GameObject laser;
+    public GameObject laserSpawn;
+    public float fireRate = 0.25f;
 
     private Rigidbody2D rBody;
+    private float timer = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -16,7 +20,21 @@ public class ShipController : MonoBehaviour
         rBody = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
+    void Update()
+    {
+        //Check if "fire" button is pressed
+        if (Input.GetAxis("Fire1") > 0 && timer > fireRate)
+        {
+            //If yes, spawn laser
+            GameObject go = GameObject.Instantiate(laser, laserSpawn.transform.position, laserSpawn.transform.rotation);
+            go.transform.Rotate(new Vector3(0, 0, 90));
+
+            //Reset timer
+            timer = 0;
+        }
+
+        timer += Time.deltaTime;
+    }
     void FixedUpdate()
     {
         float horiz = Input.GetAxis("Horizontal");
