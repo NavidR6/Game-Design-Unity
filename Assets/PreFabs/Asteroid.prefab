@@ -10,11 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 6693172294968244420}
   - component: {fileID: 6693172294968244411}
+  - component: {fileID: 2541340382483341547}
+  - component: {fileID: -8083462294076895173}
   - component: {fileID: 6693172294968244422}
   - component: {fileID: 6693172294968244410}
   - component: {fileID: 6693172294968244421}
   m_Layer: 0
-  m_Name: Layered Rock
+  m_Name: Asteroid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84,6 +86,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2541340382483341547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6693172294968244409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d736783684709a3428f17973fbdfdc05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 1089874202779482514, guid: 56048e855690081469f7aa29c3ff0249,
+    type: 3}
+--- !u!114 &-8083462294076895173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6693172294968244409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67514a04f226e684392c2e4f9162e0aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tumble: 200
 --- !u!114 &6693172294968244422
 MonoBehaviour:
   m_ObjectHideFlags: 0
