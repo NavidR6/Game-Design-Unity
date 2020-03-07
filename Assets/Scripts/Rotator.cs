@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Rotator : MonoBehaviour
 {
-    public float tumble = 200;
+    public float tumble = 100;
     private Rigidbody2D rBody;
 
     // Start is called before the first frame update
