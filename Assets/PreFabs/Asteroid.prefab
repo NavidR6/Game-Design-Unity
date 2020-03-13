@@ -100,6 +100,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 1089874202779482514, guid: 56048e855690081469f7aa29c3ff0249,
     type: 3}
+  explosion_player: {fileID: 3850626567108426387, guid: 177fc04ee23c99f4083d62864067f0ef,
+    type: 3}
 --- !u!114 &-8083462294076895173
 MonoBehaviour:
   m_ObjectHideFlags: 0
