@@ -1,23 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DestroyByContact : MonoBehaviour
 {
     public GameObject explosion;
     public GameObject explosion_player;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     // Detect when another object collides with this object
     void OnCollisionEnter2D(Collision2D other)
@@ -27,6 +14,7 @@ public class DestroyByContact : MonoBehaviour
         {
             // Collided with the player
             Instantiate(explosion_player, other.transform.position, other.transform.rotation);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         }
 
         // Create and position explosion
@@ -36,5 +24,10 @@ public class DestroyByContact : MonoBehaviour
         // Delete this object
         Destroy(other.gameObject);
         Destroy(this.gameObject);
+
+        if(other.gameObject.CompareTag("Laser"))
+        {
+            ScoreText.scoreValue += 50;
+        }
     }
 }

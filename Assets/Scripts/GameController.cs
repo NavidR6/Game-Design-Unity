@@ -44,9 +44,29 @@ public class GameController : MonoBehaviour
 
                 Instantiate(hazard, spawnPosition, Quaternion.identity);
                 yield return new WaitForSeconds(spawnWait); // Wait for the next hazard
+                
             }
 
             yield return new WaitForSeconds(waveWait);  // Wait for the next wave of hazards
+
+            if(RoundText.roundNumber <= 3)
+            {
+                hazardCount = 8;
+            }
+            else if(RoundText.roundNumber <= 7)
+            {
+                hazardCount = 16;
+            }
+            else if (RoundText.roundNumber <= 12)
+            {
+                hazardCount = 24;
+            }
+            else if (RoundText.roundNumber <= 17)
+            {
+                hazardCount += 3;
+            }
+
+            RoundText.roundNumber += 1;
         }
     }
 }
