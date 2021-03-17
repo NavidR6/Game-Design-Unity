@@ -28,6 +28,7 @@ public class ShipController : MonoBehaviour
             //If yes, spawn laser
             GameObject go = GameObject.Instantiate(laser, laserSpawn.transform.position, laserSpawn.transform.rotation);
             go.transform.Rotate(new Vector3(0, 0, 90));
+            SoundManagerScript.PlaySound("laser");
 
             //Reset timer
             timer = 0;
